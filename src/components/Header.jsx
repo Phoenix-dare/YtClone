@@ -9,6 +9,20 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import logo from '/images.png';
 
 function Header() {
+  const [query, setQuery] = React.useState("");
+  
+  function handleChange(e){
+    if(query!==""){
+window.location.href=`https://www.youtube.com/results?search_query=${e}`;}
+          }
+
+  function handleKeyDown(e,event){
+if(query!=="" && event.key==="Enter"){
+window.location.href=`https://www.youtube.com/results?search_query=${e}`;}
+          }
+
+
+
 	return (
 		<div className="header">
 			<div className="left-box">
@@ -17,8 +31,9 @@ function Header() {
 			</div>
 
 			<div className="center-box">
-				<input type="text" placeholder="Search" />
-				<SearchIcon />
+				<input type="text" placeholder="Search" onChange={event => setQuery(event.target.value)} />
+    
+				<SearchIcon onClick={()=>handleChange(query)} onKeyDown={()=>handleKeyDown(query,event)} />
 			</div>
 			<div className="right-box">
 				<VideoCallIcon />

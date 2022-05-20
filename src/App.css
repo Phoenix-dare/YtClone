@@ -48,10 +48,16 @@ flex-direction:column;
 
 
 }
-.recommended{
+.container_popular{
   flex:0.8;
   
 }
+.recommended{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+  
 .home{
   display:flex;
 align-items:center;
@@ -109,18 +115,15 @@ align-items:center;
   background-color:lightgray;
   cursor:pointer;
 }
-.recommended{
-  display:flex;
-  align-items:center;
-flex-wrap:wrap;
+
   
-}
+
 .video{
   width:260px;
   margin-bottom:40px;
 }
 .thumbnail{
-  height:140;
+  height:140px;
   width:240px;
 }
 .video_description{
@@ -136,3 +139,16 @@ margin-left:14px;
   font-weight:500;
   color:gray;
 }
+.creator{
+  margin-top:15px;
+  height:50px;
+width:50px;
+  border-radius:50%;
+
+
+}
+a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+  cursor:pointer;
+ }
